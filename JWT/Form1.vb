@@ -12,7 +12,8 @@ Public Class Form1
         Dim credentials = New Microsoft.IdentityModel.Tokens.SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256)
         Dim header = New JwtHeader(credentials)
 
-        Dim payload = New JwtPayload From {{"role", "todo_user"}, {"email", "hello@abc.com"}}
+        Dim payload = New JwtPayload From {{"role", "todo_user"}}
+        'Dim payload = New JwtPayload From {{"role", "todo_user"}, {"email", "hello@abc.com"}}
         'Dim payload = New JwtPayload From {{"role", "web_anon"}}
         Dim secToken = New JwtSecurityToken(header, payload)
         Dim handler = New JwtSecurityTokenHandler()
